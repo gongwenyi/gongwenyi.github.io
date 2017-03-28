@@ -1,0 +1,973 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="返回指定范围的随机数(m-n之间)的公式123456function random(m, n) &amp;#123;  return Math.random() * (n-m) + m;&amp;#125;// examplerandom(3, 5); // 4.680004527528821
+rem布局（动态设置html根节点font-size大小）1234567891011121314151617181920">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js常用代码">
+<meta property="og:url" content="http://yoursite.com/2017/01/20/js常用代码/index.html">
+<meta property="og:site_name" content="gwyi &nbsp; blog">
+<meta property="og:description" content="返回指定范围的随机数(m-n之间)的公式123456function random(m, n) &amp;#123;  return Math.random() * (n-m) + m;&amp;#125;// examplerandom(3, 5); // 4.680004527528821
+rem布局（动态设置html根节点font-size大小）1234567891011121314151617181920">
+<meta property="og:updated_time" content="2017-02-18T06:21:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js常用代码">
+<meta name="twitter:description" content="返回指定范围的随机数(m-n之间)的公式123456function random(m, n) &amp;#123;  return Math.random() * (n-m) + m;&amp;#125;// examplerandom(3, 5); // 4.680004527528821
+rem布局（动态设置html根节点font-size大小）1234567891011121314151617181920">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/20/js常用代码/"/>
+
+
+
+
+
+  <title> js常用代码 | gwyi &nbsp; blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6a55f0517c17c0f3242d1a80e8954682";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">gwyi &nbsp; blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你既然认准一条道路  <br />  何必去打听要走多久</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/20/js常用代码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="gwyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="gwyi &nbsp; blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js常用代码
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-20T15:34:00+08:00">
+                2017-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/20/js常用代码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/01/20/js常用代码/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="返回指定范围的随机数-m-n之间-的公式"><a href="#返回指定范围的随机数-m-n之间-的公式" class="headerlink" title="返回指定范围的随机数(m-n之间)的公式"></a>返回指定范围的随机数(m-n之间)的公式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">random</span>(<span class="params">m, n</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.random() * (n-m) + m;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">random(<span class="number">3</span>, <span class="number">5</span>); <span class="comment">// 4.680004527528821</span></div></pre></td></tr></table></figure>
+<h1 id="rem布局（动态设置html根节点font-size大小）"><a href="#rem布局（动态设置html根节点font-size大小）" class="headerlink" title="rem布局（动态设置html根节点font-size大小）"></a>rem布局（动态设置html根节点font-size大小）</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">doc, win</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> docEl = doc.documentElement,</div><div class="line">      resizeEvt = <span class="string">'orientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">recalc</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> clientWidth = docEl.clientWidth&gt;<span class="number">540</span> ? <span class="number">540</span> : docEl.clientWidth; <span class="comment">// 控制最大宽度为540px</span></div><div class="line">    <span class="keyword">if</span> (!clientWidth) <span class="keyword">return</span>;</div><div class="line">    <span class="comment">//此处的100为页面html设置的字体大小值（为方便计算一般用100px）</span></div><div class="line">    <span class="comment">//此处的320为视觉稿宽度的一半</span></div><div class="line">    <span class="comment">//根据设备可视区的宽度以及设备像素比动态改变fontSize值</span></div><div class="line">    docEl.style.fontSize = <span class="number">100</span> * (clientWidth  / <span class="number">320</span>) + <span class="string">'px'</span>;</div><div class="line">  &#125;;</div><div class="line">  recalc();</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!doc.addEventListener) <span class="keyword">return</span>;</div><div class="line">  win.addEventListener(resizeEvt, recalc, <span class="literal">false</span>);</div><div class="line">  <span class="keyword">if</span> (doc.readyState === <span class="string">'complete'</span>) &#123;</div><div class="line">    recalc();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">      doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, recalc, <span class="literal">false</span>);</div><div class="line">  &#125;</div><div class="line">&#125;)(<span class="built_in">document</span>, <span class="built_in">window</span>);</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="字符串超过指定长度的部分用’…’代替"><a href="#字符串超过指定长度的部分用’…’代替" class="headerlink" title="字符串超过指定长度的部分用’…’代替"></a>字符串超过指定长度的部分用’…’代替</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cutstr</span>(<span class="params">str, len</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> temp,</div><div class="line">    icount = <span class="number">0</span>,</div><div class="line">    patrn = <span class="regexp">/[^\x00-\xff]/</span>,</div><div class="line">    strre = <span class="string">""</span>;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (icount &lt; len - <span class="number">1</span>) &#123;</div><div class="line">      temp = str.substr(i, <span class="number">1</span>);</div><div class="line">      <span class="keyword">if</span> (patrn.exec(temp) == <span class="literal">null</span>) &#123;</div><div class="line">        icount = icount + <span class="number">1</span>;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        icount = icount + <span class="number">2</span>;</div><div class="line">      &#125;</div><div class="line">      strre += temp;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> strre + <span class="string">"..."</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">cutstr(<span class="string">'abcdefghijk'</span>, <span class="number">3</span>); <span class="comment">// "ab..."</span></div></pre></td></tr></table></figure>
+<h1 id="替换全部"><a href="#替换全部" class="headerlink" title="替换全部"></a>替换全部</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.replaceAll = <span class="function"><span class="keyword">function</span>(<span class="params">s1, s2</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(s1, <span class="string">"gm"</span>), s2);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line"><span class="string">'abbcdbbbeeff'</span>.replaceAll(<span class="string">'bb'</span>, <span class="string">'**'</span>); <span class="comment">// "a**cd**beeff"</span></div></pre></td></tr></table></figure>
+<h1 id="清除左右空格"><a href="#清除左右空格" class="headerlink" title="清除左右空格"></a>清除左右空格</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> reExtraSpace = <span class="regexp">/^\s*(.*?)\s+$/</span>;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.replace(reExtraSpace, <span class="string">"$1"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line"><span class="string">'   abcd  ef  '</span>.trim(); <span class="comment">// "abcd  ef"</span></div></pre></td></tr></table></figure>
+<h1 id="清除左空格-右空格"><a href="#清除左空格-右空格" class="headerlink" title="清除左空格/右空格"></a>清除左空格/右空格</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ltrim</span>(<span class="params">s</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> s.replace(<span class="regexp">/^(\s*|　*)/</span>, <span class="string">""</span>); </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">rtrim</span>(<span class="params">s</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> s.replace(<span class="regexp">/(\s*|　*)$/</span>, <span class="string">""</span>); </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example </span></div><div class="line">ltrim(<span class="string">'  abcd  ef  '</span>); <span class="comment">// "abcd  ef  "</span></div><div class="line">rtrim(<span class="string">'  abcd  ef  '</span>); <span class="comment">// "  abcd  ef"</span></div></pre></td></tr></table></figure>
+<h1 id="判断是否以某个字符串开头"><a href="#判断是否以某个字符串开头" class="headerlink" title="判断是否以某个字符串开头"></a>判断是否以某个字符串开头</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.startWith = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.indexOf(s) === <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line"><span class="string">'abcdef'</span>.startWith(<span class="string">'ab'</span>); <span class="comment">// true</span></div><div class="line"><span class="string">'abcdef'</span>.startWith(<span class="string">'bc'</span>); <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<h1 id="判断是否以某个字符串结束"><a href="#判断是否以某个字符串结束" class="headerlink" title="判断是否以某个字符串结束"></a>判断是否以某个字符串结束</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.endWith = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> d = <span class="keyword">this</span>.length - s.length;</div><div class="line">  <span class="keyword">return</span> (d &gt;= <span class="number">0</span> &amp;&amp; <span class="keyword">this</span>.lastIndexOf(s) == d);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line"><span class="string">'abcdef'</span>.endWith(<span class="string">'ef'</span>); <span class="comment">// true</span></div><div class="line"><span class="string">'abcdef'</span>.endWith(<span class="string">'de'</span>); <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<h1 id="转义html标签"><a href="#转义html标签" class="headerlink" title="转义html标签"></a>转义html标签</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">encodeHtml</span>(<span class="params">s</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> REGX_HTML_ENCODE = <span class="regexp">/"|&amp;|'|&lt;|&gt;|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g</span>; </div><div class="line">  <span class="keyword">var</span> s = (s != <span class="literal">undefined</span>) ? s : <span class="keyword">this</span>.toString();</div><div class="line">  <span class="keyword">return</span> (<span class="keyword">typeof</span> s != <span class="string">"string"</span>) ? s :</div><div class="line">    s.replace(REGX_HTML_ENCODE,</div><div class="line">      <span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">0</span></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> c = $<span class="number">0.</span>charCodeAt(<span class="number">0</span>),</div><div class="line">          r = [<span class="string">"&amp;#"</span>];</div><div class="line">        c = (c == <span class="number">0x20</span>) ? <span class="number">0xA0</span> : c;</div><div class="line">        r.push(c);</div><div class="line">        r.push(<span class="string">";"</span>);</div><div class="line">        <span class="keyword">return</span> r.join(<span class="string">""</span>);</div><div class="line">      &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">encodeHtml(<span class="string">'&lt;a&gt;哈哈哈哈哈哈&lt;/a&gt;'</span>); <span class="comment">// "&amp;#60;a&amp;#62;哈哈哈哈哈哈&amp;#60;/a&amp;#62;"</span></div></pre></td></tr></table></figure>
+<h1 id="反转义html"><a href="#反转义html" class="headerlink" title="反转义html"></a>反转义html</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decodeHtml</span>(<span class="params">s</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> HTML_DECODE = &#123;</div><div class="line">    <span class="string">"&lt;"</span>: <span class="string">"&lt;"</span>,</div><div class="line">    <span class="string">"&gt;"</span>: <span class="string">"&gt;"</span>,</div><div class="line">    <span class="string">"&amp;"</span>: <span class="string">"&amp;"</span>,</div><div class="line">    <span class="string">" "</span>: <span class="string">" "</span>,</div><div class="line">    <span class="string">'"'</span>: <span class="string">'\"'</span>,</div><div class="line">    <span class="string">"©"</span>: <span class="string">""</span></div><div class="line"></div><div class="line">    <span class="comment">// Add more</span></div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">var</span> REGX_HTML_DECODE = <span class="regexp">/&amp;\w+;|&amp;#(\d+);/g</span>; </div><div class="line">  <span class="keyword">var</span> s = (s != <span class="literal">undefined</span>) ? s : <span class="keyword">this</span>.toString();</div><div class="line">  <span class="keyword">return</span> (<span class="keyword">typeof</span> s != <span class="string">"string"</span>) ? s :</div><div class="line">    s.replace(REGX_HTML_DECODE,</div><div class="line">      <span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">0</span>, $<span class="number">1</span></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> c = HTML_DECODE[$<span class="number">0</span>];</div><div class="line">        <span class="keyword">if</span> (c == <span class="literal">undefined</span>) &#123;</div><div class="line">          <span class="comment">// Maybe is Entity Number</span></div><div class="line">          <span class="keyword">if</span> (!<span class="built_in">isNaN</span>($<span class="number">1</span>)) &#123;</div><div class="line">            c = <span class="built_in">String</span>.fromCharCode(($<span class="number">1</span> == <span class="number">160</span>) ? <span class="number">32</span> : $<span class="number">1</span>);</div><div class="line">          &#125; <span class="keyword">else</span> &#123;</div><div class="line">            c = $<span class="number">0</span>;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> c;</div><div class="line">      &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">decodeHtml(<span class="string">"&amp;#60;a&amp;#62;哈哈哈哈哈哈&amp;#60;/a&amp;#62;"</span>); <span class="comment">// "&lt;a&gt;哈哈哈哈哈哈&lt;/a&gt;"</span></div></pre></td></tr></table></figure>
+<h1 id="时间日期格式转换"><a href="#时间日期格式转换" class="headerlink" title="时间日期格式转换"></a>时间日期格式转换</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Date</span>.prototype.Format = <span class="function"><span class="keyword">function</span>(<span class="params">formatStr</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> str = formatStr;</div><div class="line">  <span class="keyword">var</span> Week = [<span class="string">'日'</span>, <span class="string">'一'</span>, <span class="string">'二'</span>, <span class="string">'三'</span>, <span class="string">'四'</span>, <span class="string">'五'</span>, <span class="string">'六'</span>];</div><div class="line">  str = str.replace(<span class="regexp">/yyyy|YYYY/</span>, <span class="keyword">this</span>.getFullYear());</div><div class="line">  str = str.replace(<span class="regexp">/yy|YY/</span>, (<span class="keyword">this</span>.getYear() % <span class="number">100</span>) &gt; <span class="number">9</span> ? (<span class="keyword">this</span>.getYear() % <span class="number">100</span>).toString() : <span class="string">'0'</span> + (<span class="keyword">this</span>.getYear() % <span class="number">100</span>));</div><div class="line">  str = str.replace(<span class="regexp">/MM/</span>, (<span class="keyword">this</span>.getMonth() + <span class="number">1</span>) &gt; <span class="number">9</span> ? (<span class="keyword">this</span>.getMonth() + <span class="number">1</span>).toString() : <span class="string">'0'</span> + (<span class="keyword">this</span>.getMonth() + <span class="number">1</span>));</div><div class="line">  str = str.replace(<span class="regexp">/M/g</span>, (<span class="keyword">this</span>.getMonth() + <span class="number">1</span>));</div><div class="line">  str = str.replace(<span class="regexp">/w|W/g</span>, Week[<span class="keyword">this</span>.getDay()]);</div><div class="line">  str = str.replace(<span class="regexp">/dd|DD/</span>, <span class="keyword">this</span>.getDate() &gt; <span class="number">9</span> ? <span class="keyword">this</span>.getDate().toString() : <span class="string">'0'</span> + <span class="keyword">this</span>.getDate());</div><div class="line">  str = str.replace(<span class="regexp">/d|D/g</span>, <span class="keyword">this</span>.getDate());</div><div class="line">  str = str.replace(<span class="regexp">/hh|HH/</span>, <span class="keyword">this</span>.getHours() &gt; <span class="number">9</span> ? <span class="keyword">this</span>.getHours().toString() : <span class="string">'0'</span> + <span class="keyword">this</span>.getHours());</div><div class="line">  str = str.replace(<span class="regexp">/h|H/g</span>, <span class="keyword">this</span>.getHours());</div><div class="line">  str = str.replace(<span class="regexp">/mm/</span>, <span class="keyword">this</span>.getMinutes() &gt; <span class="number">9</span> ? <span class="keyword">this</span>.getMinutes().toString() : <span class="string">'0'</span> + <span class="keyword">this</span>.getMinutes());</div><div class="line">  str = str.replace(<span class="regexp">/m/g</span>, <span class="keyword">this</span>.getMinutes());</div><div class="line">  str = str.replace(<span class="regexp">/ss|SS/</span>, <span class="keyword">this</span>.getSeconds() &gt; <span class="number">9</span> ? <span class="keyword">this</span>.getSeconds().toString() : <span class="string">'0'</span> + <span class="keyword">this</span>.getSeconds());</div><div class="line">  str = str.replace(<span class="regexp">/s|S/g</span>, <span class="keyword">this</span>.getSeconds());</div><div class="line">  <span class="keyword">return</span> str</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().Format(<span class="string">'YYYY/MM/DD'</span>); <span class="comment">// "2017/01/22"</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().Format(<span class="string">'yyyy-MM-dd'</span>); <span class="comment">// "2017-01-22"</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().Format(<span class="string">'hh:mm:ss'</span>); <span class="comment">// "10:31:19"</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().Format(<span class="string">'yyyy-MM-dd hh:mm:ss'</span>); <span class="comment">// "2017-01-22 10:28:32"</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().Format(<span class="string">'yyyy-MM-dd 星期w hh:mm:ss'</span>); <span class="comment">// "2017-01-22 星期日 10:29:29"</span></div></pre></td></tr></table></figure>
+<h1 id="获得当前页面URL中GET参数值"><a href="#获得当前页面URL中GET参数值" class="headerlink" title="获得当前页面URL中GET参数值"></a>获得当前页面URL中GET参数值</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getQueryString</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(^|&amp;)'</span> + name + <span class="string">'=([^&amp;]*)(&amp;|$)'</span>, <span class="string">'i'</span>);</div><div class="line">  <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);</div><div class="line">  <span class="keyword">if</span> (r != <span class="literal">null</span>) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example url = 'www.baidu.com?a=123&amp;b=&amp;c=345'</span></div><div class="line">getQueryString(<span class="string">'a'</span>); <span class="comment">// "123"</span></div><div class="line">getQueryString(<span class="string">'b'</span>); <span class="comment">// ""</span></div><div class="line">getQueryString(<span class="string">'d'</span>); <span class="comment">// null</span></div></pre></td></tr></table></figure>
+<h1 id="金额大写转换函数"><a href="#金额大写转换函数" class="headerlink" title="金额大写转换函数"></a>金额大写转换函数</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">transform</span>(<span class="params">tranvalue</span>) </span>&#123;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    <span class="keyword">var</span> i = <span class="number">1</span>;</div><div class="line">    <span class="keyword">var</span> dw2 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">""</span>, <span class="string">"万"</span>, <span class="string">"亿"</span>); <span class="comment">//大单位</span></div><div class="line">    <span class="keyword">var</span> dw1 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"拾"</span>, <span class="string">"佰"</span>, <span class="string">"仟"</span>); <span class="comment">//小单位</span></div><div class="line">    <span class="keyword">var</span> dw = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"零"</span>, <span class="string">"壹"</span>, <span class="string">"贰"</span>, <span class="string">"叁"</span>, <span class="string">"肆"</span>, <span class="string">"伍"</span>, <span class="string">"陆"</span>, <span class="string">"柒"</span>, <span class="string">"捌"</span>, <span class="string">"玖"</span>); <span class="comment">//整数部分用</span></div><div class="line">    <span class="comment">//以下是小写转换成大写显示在合计大写的文本框中     </span></div><div class="line">    <span class="comment">//分离整数与小数</span></div><div class="line">    <span class="keyword">var</span> source = splits(tranvalue);</div><div class="line">    <span class="keyword">var</span> num = source[<span class="number">0</span>];</div><div class="line">    <span class="keyword">var</span> dig = source[<span class="number">1</span>];</div><div class="line">    <span class="comment">//转换整数部分</span></div><div class="line">    <span class="keyword">var</span> k1 = <span class="number">0</span>; <span class="comment">//计小单位</span></div><div class="line">    <span class="keyword">var</span> k2 = <span class="number">0</span>; <span class="comment">//计大单位</span></div><div class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> str = <span class="string">""</span>;</div><div class="line">    <span class="keyword">var</span> len = source[<span class="number">0</span>].length; <span class="comment">//整数的长度</span></div><div class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= len; i++) &#123;</div><div class="line">      <span class="keyword">var</span> n = source[<span class="number">0</span>].charAt(len - i); <span class="comment">//取得某个位数上的数字</span></div><div class="line">      <span class="keyword">var</span> bn = <span class="number">0</span>;</div><div class="line">      <span class="keyword">if</span> (len - i - <span class="number">1</span> &gt;= <span class="number">0</span>) &#123;</div><div class="line">        bn = source[<span class="number">0</span>].charAt(len - i - <span class="number">1</span>); <span class="comment">//取得某个位数前一位上的数字</span></div><div class="line">      &#125;</div><div class="line">      sum = sum + <span class="built_in">Number</span>(n);</div><div class="line">      <span class="keyword">if</span> (sum != <span class="number">0</span>) &#123;</div><div class="line">        str = dw[<span class="built_in">Number</span>(n)].concat(str); <span class="comment">//取得该数字对应的大写数字，并插入到str字符串的前面</span></div><div class="line">        <span class="keyword">if</span> (n == <span class="string">'0'</span>) sum = <span class="number">0</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (len - i - <span class="number">1</span> &gt;= <span class="number">0</span>) &#123; <span class="comment">//在数字范围内</span></div><div class="line">        <span class="keyword">if</span> (k1 != <span class="number">3</span>) &#123; <span class="comment">//加小单位</span></div><div class="line">          <span class="keyword">if</span> (bn != <span class="number">0</span>) &#123;</div><div class="line">            str = dw1[k1].concat(str);</div><div class="line">          &#125;</div><div class="line">          k1++;</div><div class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">//不加小单位，加大单位</span></div><div class="line">          k1 = <span class="number">0</span>;</div><div class="line">          <span class="keyword">var</span> temp = str.charAt(<span class="number">0</span>);</div><div class="line">          <span class="keyword">if</span> (temp == <span class="string">"万"</span> || temp == <span class="string">"亿"</span>) <span class="comment">//若大单位前没有数字则舍去大单位</span></div><div class="line">            str = str.substr(<span class="number">1</span>, str.length - <span class="number">1</span>);</div><div class="line">          str = dw2[k2].concat(str);</div><div class="line">          sum = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (k1 == <span class="number">3</span>) &#123; <span class="comment">//小单位到千则大单位进一</span></div><div class="line">        k2++;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//转换小数部分</span></div><div class="line">    <span class="keyword">var</span> strdig = <span class="string">""</span>;</div><div class="line">    <span class="keyword">if</span> (dig != <span class="string">""</span>) &#123;</div><div class="line">      <span class="keyword">var</span> n = dig.charAt(<span class="number">0</span>);</div><div class="line">      <span class="keyword">if</span> (n != <span class="number">0</span>) &#123;</div><div class="line">        strdig += dw[<span class="built_in">Number</span>(n)] + <span class="string">"角"</span>; <span class="comment">//加数字</span></div><div class="line">      &#125;</div><div class="line">      <span class="keyword">var</span> n = dig.charAt(<span class="number">1</span>);</div><div class="line">      <span class="keyword">if</span> (n != <span class="number">0</span>) &#123;</div><div class="line">        strdig += dw[<span class="built_in">Number</span>(n)] + <span class="string">"分"</span>; <span class="comment">//加数字</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    str += <span class="string">"元"</span> + strdig;</div><div class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"0元"</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> str;</div><div class="line">&#125;</div><div class="line"><span class="comment">//拆分整数与小数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">splits</span>(<span class="params">tranvalue</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> value = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">''</span>, <span class="string">''</span>);</div><div class="line">  temp = tranvalue.toFixed(<span class="number">2</span>).split(<span class="string">"."</span>);</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; temp.length; i++) &#123;</div><div class="line">    value = temp;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> value;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">transform(<span class="number">3333</span>); <span class="comment">// "叁仟叁佰叁拾叁元"</span></div><div class="line">transform(<span class="number">3333.3455</span>); <span class="comment">// "叁仟叁佰叁拾叁元叁角伍分"</span></div><div class="line">transform(<span class="number">333456762.32</span>); <span class="comment">// "叁亿叁仟叁佰肆拾伍万陆仟柒佰陆拾贰元叁角贰分"</span></div><div class="line">transform(<span class="number">32323423423.3455</span>); <span class="comment">// transform(32323423423.3455);</span></div></pre></td></tr></table></figure>
+<h1 id="判断一个对象是否为空对象"><a href="#判断一个对象是否为空对象" class="headerlink" title="判断一个对象是否为空对象"></a>判断一个对象是否为空对象</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEmptyObject</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> obj) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">isEmptyObject(&#123;&#125;); <span class="comment">// true</span></div><div class="line">isEmptyObject(&#123;<span class="attr">a</span>: <span class="number">3</span>&#125;); <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<h1 id="获取数组中的最小最大值"><a href="#获取数组中的最小最大值" class="headerlink" title="获取数组中的最小最大值"></a>获取数组中的最小最大值</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallest</span>(<span class="params">array</span>)</span>&#123;                         </div><div class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, array);             </div><div class="line">&#125;                                                 </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largest</span>(<span class="params">array</span>)</span>&#123;                          </div><div class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, array);             </div><div class="line">&#125;  </div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">smallest([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]); <span class="comment">// 0</span></div><div class="line">largest([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+<h1 id="判断两个小数是否相等"><a href="#判断两个小数是否相等" class="headerlink" title="判断两个小数是否相等"></a>判断两个小数是否相等</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//因为javascript数字通常被输入为十进制的浮点数，但内部却被表示为二进制，所以计算结果会有偏差：</span></div><div class="line"><span class="comment">// 首先看下面的几个例子</span></div><div class="line"><span class="number">0.1</span> + <span class="number">0.2</span>; <span class="comment">// 0.30000000000000004</span></div><div class="line"><span class="number">1.2</span> - <span class="number">0.1</span>; <span class="comment">// 1.0999999999999999</span></div><div class="line"><span class="number">0.1</span> + <span class="number">0.2</span> === <span class="number">0.3</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="comment">//所以我们不应该直接比较非整数，而是取其上限，把误差计算进去</span></div><div class="line"><span class="comment">//这样一个上限称为 machine epsilon，双精度的标准epsilon值是2^-53</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> EPSILON = <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">-53</span>); <span class="comment">//1.1102230246251565e-16</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">epsEqu</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.abs(x - y) &lt; EPSILON;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">epsEqu(<span class="number">0.1</span>+<span class="number">0.2</span>, <span class="number">0.3</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<h1 id="上传图片预览功能"><a href="#上传图片预览功能" class="headerlink" title="上传图片预览功能"></a>上传图片预览功能</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span> <span class="attr">onchange</span>=<span class="string">"showPreview(this)"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"portrait"</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">width</span>=<span class="string">"70"</span> <span class="attr">height</span>=<span class="string">"75"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showPreview</span>(<span class="params">source</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> file = source.files[<span class="number">0</span>];</div><div class="line">  <span class="keyword">if</span>(<span class="built_in">window</span>.FileReader) &#123;</div><div class="line">      <span class="keyword">var</span> fr = <span class="keyword">new</span> FileReader();</div><div class="line">      fr.onloadend = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"portrait"</span>).src = e.target.result;</div><div class="line">      &#125;;</div><div class="line">      fr.readAsDataURL(file);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="cookie操作"><a href="#cookie操作" class="headerlink" title="cookie操作"></a>cookie操作</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置cookie</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">c_name, value, expiredays</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> exdate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  exdate.setDate(exdate.getDate() + expiredays);</div><div class="line">  <span class="built_in">document</span>.cookie = c_name + <span class="string">"="</span> +<span class="built_in">escape</span>(value) + ((expiredays==<span class="literal">null</span>) ? <span class="string">""</span> : <span class="string">";expires="</span> + exdate.toGMTString());</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 获取cookie</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">c_name</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.cookie.length&gt;<span class="number">0</span>) &#123;</div><div class="line">    <span class="keyword">var</span> c_start = <span class="built_in">document</span>.cookie.indexOf(c_name + <span class="string">"="</span>);</div><div class="line">    <span class="keyword">if</span> (c_start != <span class="number">-1</span>) &#123; </div><div class="line">      c_start = c_start + c_name.length + <span class="number">1</span>;</div><div class="line">      <span class="keyword">var</span> c_end = <span class="built_in">document</span>.cookie.indexOf(<span class="string">";"</span>,c_start);</div><div class="line">      <span class="keyword">if</span> (c_end == <span class="number">-1</span>) c_end = <span class="built_in">document</span>.cookie.length;</div><div class="line">      <span class="keyword">return</span> <span class="built_in">unescape</span>(<span class="built_in">document</span>.cookie.substring(c_start,c_end));</div><div class="line">    &#125; </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">setCookie(<span class="string">'name'</span>, <span class="string">'zhangsan'</span>, <span class="number">7</span>);</div><div class="line">getCookie(<span class="string">'name'</span>);  <span class="comment">// "zhangsan"</span></div><div class="line">setCookie(<span class="string">'name'</span>, <span class="string">'zhangsan'</span>, <span class="number">-1</span>);</div><div class="line">getCookie(<span class="string">'name'</span>);  <span class="comment">// ""</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>参考链接：<br><a href="http://blog.csdn.net/ft305977550/article/details/17613571" target="_blank" rel="external">原生JavaScript技巧大收集100</a><br><a href="https://segmentfault.com/a/1190000004075512" target="_blank" rel="external">js常用代码</a><br><a href="https://rockjins.github.io/2017/02/06/javascript-skill/" target="_blank" rel="external">不定期更新JavaScript技巧</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/weixinpay.png" alt="gwyi WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/13/sublime-text-常用插件/" rel="next" title="sublime text 常用插件">
+                <i class="fa fa-chevron-left"></i> sublime text 常用插件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/18/ES6学习笔记（一）：let和const命令/" rel="prev" title="ES6学习笔记（一）：let和const命令">
+                ES6学习笔记（一）：let和const命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="gwyi" />
+          <p class="site-author-name" itemprop="name">gwyi</p>
+           
+              <p class="site-description motion-element" itemprop="description">前端开发工程师一枚，希望能记录一些自己在工作中遇到的问题，和大家共同学习、交流</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gongwenyi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3806801983/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#返回指定范围的随机数-m-n之间-的公式"><span class="nav-number">1.</span> <span class="nav-text">返回指定范围的随机数(m-n之间)的公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rem布局（动态设置html根节点font-size大小）"><span class="nav-number">2.</span> <span class="nav-text">rem布局（动态设置html根节点font-size大小）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串超过指定长度的部分用’…’代替"><span class="nav-number">3.</span> <span class="nav-text">字符串超过指定长度的部分用’…’代替</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#替换全部"><span class="nav-number">4.</span> <span class="nav-text">替换全部</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清除左右空格"><span class="nav-number">5.</span> <span class="nav-text">清除左右空格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清除左空格-右空格"><span class="nav-number">6.</span> <span class="nav-text">清除左空格/右空格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断是否以某个字符串开头"><span class="nav-number">7.</span> <span class="nav-text">判断是否以某个字符串开头</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断是否以某个字符串结束"><span class="nav-number">8.</span> <span class="nav-text">判断是否以某个字符串结束</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转义html标签"><span class="nav-number">9.</span> <span class="nav-text">转义html标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反转义html"><span class="nav-number">10.</span> <span class="nav-text">反转义html</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间日期格式转换"><span class="nav-number">11.</span> <span class="nav-text">时间日期格式转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获得当前页面URL中GET参数值"><span class="nav-number">12.</span> <span class="nav-text">获得当前页面URL中GET参数值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#金额大写转换函数"><span class="nav-number">13.</span> <span class="nav-text">金额大写转换函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断一个对象是否为空对象"><span class="nav-number">14.</span> <span class="nav-text">判断一个对象是否为空对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取数组中的最小最大值"><span class="nav-number">15.</span> <span class="nav-text">获取数组中的最小最大值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断两个小数是否相等"><span class="nav-number">16.</span> <span class="nav-text">判断两个小数是否相等</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上传图片预览功能"><span class="nav-number">17.</span> <span class="nav-text">上传图片预览功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookie操作"><span class="nav-number">18.</span> <span class="nav-text">cookie操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">gwyi</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://gwyi-blog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/01/20/js常用代码/';
+          this.page.identifier = '2017/01/20/js常用代码/';
+          this.page.title = 'js常用代码';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gwyi-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

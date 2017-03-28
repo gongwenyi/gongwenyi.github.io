@@ -1,0 +1,1136 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,ES6," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="一、Set的初始化
+ES6提供了新的数据结构Set，它类似于数组，但是成员的值是唯一的，没有重复的值。
+
+Set是一个构造函数，用来生成Set数据结构。123456let set = new Set();let arr = [1, 3, 4, 4, 5, 3, 2];arr.map(x =&amp;gt; set.add(x));for(let value of set) &amp;#123;  console.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6学习笔记（三）：Set和Map数据结构">
+<meta property="og:url" content="http://yoursite.com/2017/02/19/ES6学习笔记（三）：Set和Map数据结构/index.html">
+<meta property="og:site_name" content="gwyi &nbsp; blog">
+<meta property="og:description" content="一、Set的初始化
+ES6提供了新的数据结构Set，它类似于数组，但是成员的值是唯一的，没有重复的值。
+
+Set是一个构造函数，用来生成Set数据结构。123456let set = new Set();let arr = [1, 3, 4, 4, 5, 3, 2];arr.map(x =&amp;gt; set.add(x));for(let value of set) &amp;#123;  console.">
+<meta property="og:updated_time" content="2017-03-07T11:08:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6学习笔记（三）：Set和Map数据结构">
+<meta name="twitter:description" content="一、Set的初始化
+ES6提供了新的数据结构Set，它类似于数组，但是成员的值是唯一的，没有重复的值。
+
+Set是一个构造函数，用来生成Set数据结构。123456let set = new Set();let arr = [1, 3, 4, 4, 5, 3, 2];arr.map(x =&amp;gt; set.add(x));for(let value of set) &amp;#123;  console.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/19/ES6学习笔记（三）：Set和Map数据结构/"/>
+
+
+
+
+
+  <title> ES6学习笔记（三）：Set和Map数据结构 | gwyi &nbsp; blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6a55f0517c17c0f3242d1a80e8954682";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">gwyi &nbsp; blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你既然认准一条道路  <br />  何必去打听要走多久</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/19/ES6学习笔记（三）：Set和Map数据结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="gwyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="gwyi &nbsp; blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ES6学习笔记（三）：Set和Map数据结构
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-19T12:56:58+08:00">
+                2017-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/19/ES6学习笔记（三）：Set和Map数据结构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/02/19/ES6学习笔记（三）：Set和Map数据结构/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、Set的初始化"><a href="#一、Set的初始化" class="headerlink" title="一、Set的初始化"></a>一、Set的初始化</h1><blockquote>
+<p>ES6提供了新的数据结构Set，它类似于数组，但是成员的值是<strong>唯一</strong>的，没有重复的值。</p>
+</blockquote>
+<p>Set是一个构造函数，用来生成Set数据结构。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">2</span>];</div><div class="line">arr.map(<span class="function"><span class="params">x</span> =&gt;</span> set.add(x));</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> set) &#123;</div><div class="line">  <span class="built_in">console</span>.log(set); <span class="comment">// 1 3 4 5 2</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的代码中Set通过实例的<code>add</code>方法来添加成员，结果表明Set不会添加重复的值。<br><a id="more"></a><br>除了使用<code>add</code>方法之外，Set还可以接受一个数组（或类似数组的对象）作为参数来初始化。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> set1 = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">4</span>]);</div><div class="line"><span class="keyword">let</span> arr = [...set1]; <span class="comment">// [1, 3, 5, 4]</span></div><div class="line"><span class="keyword">let</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">'div'</span>);</div><div class="line"><span class="keyword">let</span> set2 = <span class="keyword">new</span> <span class="built_in">Set</span>(divs);</div><div class="line">set2.size;  <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
+<p>去除数组重复成员的方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">4</span>];</div><div class="line">arr = [...new <span class="built_in">Set</span>(arr)];  <span class="comment">// [1, 3, 5, 4]</span></div></pre></td></tr></table></figure></p>
+<h1 id="二、Set实例的属性和方法"><a href="#二、Set实例的属性和方法" class="headerlink" title="二、Set实例的属性和方法"></a>二、Set实例的属性和方法</h1><p><strong>(1）Set实例的属性：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set.prototype.constructor</td>
+<td>构造函数，默认就是Set函数</td>
+</tr>
+<tr>
+<td>Set.prototype.size</td>
+<td>返回Set实例的成员总数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(2) Set实例的方法：</strong><br>1、操作方法</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>add(value)</td>
+<td>添加一个值，返回Set结构本身</td>
+</tr>
+<tr>
+<td>delete(value)</td>
+<td>删除某个值，返回一个布尔值，表示删除是否成功</td>
+</tr>
+<tr>
+<td>has(value)</td>
+<td>判断某个值是不是Set的成员，返回一个布尔值</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>清除所有成员，没有返回值</td>
+</tr>
+</tbody>
+</table>
+<p>操作方法使用示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line">set.add(<span class="number">1</span>).add(<span class="number">2</span>);</div><div class="line">set.has(<span class="number">1</span>); <span class="comment">// true</span></div><div class="line">set.delete(<span class="number">1</span>); <span class="comment">// true</span></div><div class="line">set.has(<span class="number">1</span>); <span class="comment">// false</span></div><div class="line">set.clear();</div><div class="line">set.size; <span class="comment">// 0</span></div></pre></td></tr></table></figure></p>
+<p>2、遍历方法</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keys()</td>
+<td>返回键名的遍历器</td>
+</tr>
+<tr>
+<td>values()</td>
+<td>返回键值的遍历器</td>
+</tr>
+<tr>
+<td>entries()</td>
+<td>返回键值对的遍历器</td>
+</tr>
+<tr>
+<td>forEach(value, key)</td>
+<td>使用回调函数遍历，参数顺序为值，键</td>
+</tr>
+</tbody>
+</table>
+<p>遍历方法使用示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>]);</div><div class="line"><span class="comment">// 使用keys遍历键名</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">of</span> set.keys()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(key); <span class="comment">// orange apple pear</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 使用values遍历键值</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> set.values()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// orange apple pear</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 使用entries遍历键值对</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> set.entries()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(item);  <span class="comment">// ["orange", "orange"] ["apple", "apple"] ["pear", "pear"]</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 或者</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key, value] <span class="keyword">of</span> set.entries()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(key, value);  <span class="comment">// orange orange  apple apple  pear pear</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 使用forEach遍历</span></div><div class="line">set.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(key + <span class="string">': '</span> + value);  <span class="comment">// orange: orange    apple: apple    pear: pear</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>通过上面代码中<code>entires</code>方法遍历的返回值可以看出，Set结构的键名和键值是相同的，所以对于Set结构来说<code>keys</code>和<code>values</code>方法遍历是没有区别的。<br>Set结构的实例默认可遍历，它调用的默认遍历函数就是<code>values</code>方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Set</span>.prototype[<span class="built_in">Symbol</span>.iterator] === <span class="built_in">Set</span>.prototype.values;  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>这意味着，可以省略<code>values</code>方法，直接使用<code>for...of</code>遍历Set结构。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>]);</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> set) &#123;</div><div class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// orange apple pear</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="三、Map的初始化"><a href="#三、Map的初始化" class="headerlink" title="三、Map的初始化"></a>三、Map的初始化</h1><blockquote>
+<p>ES6新增了Map数据结构，它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当做键。传统的Object结构提供了“字符串-值”的对应，而Map结构提供了“值-值”的对应，功能更加完善。</p>
+</blockquote>
+<p>Map是一个构造函数，用来生成Map数据结构。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">map.set(<span class="number">1</span>, <span class="number">1000</span>); <span class="comment">// 使用number当“键”</span></div><div class="line">map.set(<span class="string">'auth'</span>, <span class="string">'张三'</span>);  <span class="comment">// 使用string当“键”</span></div><div class="line">map.set(<span class="literal">undefined</span>, <span class="string">'name'</span>); <span class="comment">// 使用undefined当“键”</span></div><div class="line">map.set(&#123;<span class="string">'sex'</span>: <span class="string">'男'</span>&#125;, <span class="number">1000</span>);  <span class="comment">// 使用object当“键”</span></div><div class="line">map.set(<span class="literal">null</span>, <span class="number">1000</span>);  <span class="comment">// 使用null当“键”</span></div><div class="line"><span class="built_in">console</span>.log(map); <span class="comment">// &#123;1 =&gt; 1000, "auth" =&gt; "张三", undefined =&gt; "name", Object &#123;sex: "男"&#125; =&gt; 1, null =&gt; 1000&#125;</span></div></pre></td></tr></table></figure></p>
+<p>上面的代码中，使用<code>set(key, value)</code>方法为Map结构添加成员，而且这里的“键”可以是任何类型的值。<br>除了<code>set</code>方法之外，Map还可以接受一个数组作为参数，该数组的成员是一个个表示键值对的数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [[<span class="string">'name'</span>, <span class="string">'张三'</span>], [<span class="string">'age'</span>, <span class="number">30</span>], [<span class="string">'sex'</span>], [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]];</div><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>(arr);</div><div class="line">map.get(<span class="string">'name'</span>);  <span class="comment">// '张三'</span></div><div class="line">map.get(<span class="string">'age'</span>);   <span class="comment">// 30</span></div><div class="line">map.get(<span class="string">'sex'</span>);   <span class="comment">// undefined</span></div><div class="line">map.get(<span class="number">10</span>);      <span class="comment">// 20</span></div><div class="line"><span class="built_in">console</span>.log(map); <span class="comment">// &#123;"name" =&gt; "张三", "age" =&gt; 30, "sex" =&gt; undefined, 10 =&gt; 20&#125;</span></div></pre></td></tr></table></figure></p>
+<p>Map接受数组作为参数，实际是执行的下面的操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [[<span class="string">'name'</span>, <span class="string">'张三'</span>], [<span class="string">'age'</span>, <span class="number">30</span>]];</div><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">arr.forEach(<span class="function">(<span class="params">[key, value]</span>) =&gt;</span> &#123;</div><div class="line">  map.set(key, value);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>如果对一个键多次赋值，后面的值会覆盖前面的值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">map.set(<span class="string">'name'</span>, <span class="string">'张三'</span>).set(<span class="string">'name'</span>, <span class="string">'李四'</span>);</div><div class="line">map.get(<span class="string">'name'</span>);  <span class="comment">// '李四'</span></div></pre></td></tr></table></figure></p>
+<p>如果读取一个不存在的键，将返回<code>undefined</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">map.get(<span class="string">'name'</span>);  <span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
+<p><strong>注意</strong>：只有对同一个对象的引用，Map结构才将其视为同一个键，这一点要非常小心。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">map.set(&#123;<span class="string">'a'</span>: <span class="number">1</span>&#125;, <span class="number">100</span>);</div><div class="line">map.get(&#123;<span class="string">'a'</span>: <span class="number">1</span>&#125;);  <span class="comment">// undefined</span></div><div class="line">map.set([<span class="number">1</span>], <span class="number">200</span>);</div><div class="line">map.get([<span class="number">1</span>]); <span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
+<p>上面的代码中，set和get中的键名是一样，但是实际上是两个值，因为内存地址是不一样的，所以get方法无法读取该键，返回<code>undefined</code>。<br>要解决这种问题可以把键名是数组或对象的键用变量代替。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line"><span class="keyword">let</span> a = [<span class="number">1</span>];</div><div class="line"><span class="keyword">let</span> b = [<span class="number">1</span>]</div><div class="line"><span class="keyword">let</span> o = &#123;<span class="string">'a'</span>: <span class="number">1</span>&#125;;</div><div class="line">map.set(a, <span class="number">100</span>);</div><div class="line">map.get(a); <span class="comment">// 100</span></div><div class="line">map.set(b, <span class="number">200</span>);</div><div class="line">map.get(b); <span class="comment">// 200</span></div><div class="line">map.set(o, <span class="number">300</span>);</div><div class="line">map.get(o); <span class="comment">// 300</span></div><div class="line"><span class="built_in">console</span>.log(map); <span class="comment">// &#123;[1] =&gt; 100, [1] =&gt; 200, Object &#123;a: 1&#125; =&gt; 200&#125;</span></div></pre></td></tr></table></figure></p>
+<h1 id="四、Map实例的属性和方法"><a href="#四、Map实例的属性和方法" class="headerlink" title="四、Map实例的属性和方法"></a>四、Map实例的属性和方法</h1><p><strong>(1）Map实例的属性：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Map.prototype.constructor</td>
+<td>构造函数，默认就是Map函数</td>
+</tr>
+<tr>
+<td>Map.prototype.size</td>
+<td>返回Map实例的成员总数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>（2）Map实例的方法：</strong><br>1、操作方法</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>set(key, value)</td>
+<td>设置key所对应的键值，返回Map结构本身</td>
+</tr>
+<tr>
+<td>get(key)</td>
+<td>读取key对应的键值，如果找不到key，返回undefined</td>
+</tr>
+<tr>
+<td>delete(key)</td>
+<td>删除key对应的键和值，返回一个布尔值，表示删除是否成功</td>
+</tr>
+<tr>
+<td>has(key)</td>
+<td>判断某个键是不是Map的成员，返回一个布尔值</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>清除所有成员，没有返回值</td>
+</tr>
+</tbody>
+</table>
+<p>操作方法使用示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">map.set(<span class="string">'a'</span>, <span class="number">100</span>).set(<span class="string">'b'</span>, <span class="number">200</span>);</div><div class="line">map.get(<span class="string">'a'</span>);     <span class="comment">// 100</span></div><div class="line">map.delete(<span class="string">'a'</span>);  <span class="comment">// true</span></div><div class="line">map.has(<span class="string">'a'</span>);     <span class="comment">// false</span></div><div class="line">map.clear();</div><div class="line">map.size;         <span class="comment">// 0</span></div></pre></td></tr></table></figure></p>
+<p>2、遍历方法</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keys()</td>
+<td>返回键名的遍历器</td>
+</tr>
+<tr>
+<td>values()</td>
+<td>返回键值的遍历器</td>
+</tr>
+<tr>
+<td>entries()</td>
+<td>返回键值对的遍历器</td>
+</tr>
+<tr>
+<td>forEach(value, key)</td>
+<td>使用回调函数遍历，参数顺序为值，键</td>
+</tr>
+</tbody>
+</table>
+<p>便利方法使用示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'name'</span>, <span class="string">'张三'</span>], [<span class="string">'age'</span>, <span class="number">30</span>], [<span class="string">'addr'</span>, <span class="string">'深圳'</span>], [<span class="string">'sex'</span>]]);</div><div class="line"></div><div class="line"><span class="comment">// 使用keys遍历键名</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">of</span> map.keys()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(key);           <span class="comment">// name age addr sex</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 使用values遍历键值</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> map.values()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(value);         <span class="comment">// 张三 30 深圳 undefined</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 使用entries遍历键值对</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> map.entries()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(item);          <span class="comment">// ["name", "张三"] ["age", 30] ["addr", "深圳"] ["sex", undefined]</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 或者</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key, value] <span class="keyword">of</span> map.entries()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(key, value);   <span class="comment">// name 张三  age 30  addr 深圳  sex undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Map结构的实例默认可遍历，它调用的默认遍历函数就是<code>entries</code>方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Map</span>.prototype[<span class="built_in">Symbol</span>.iterator] === <span class="built_in">Map</span>.prototype.entries;  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>这意味着，可以省略<code>entries</code>方法，直接使用<code>for...of</code>遍历Map结构。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'name'</span>, <span class="string">'张三'</span>], [<span class="string">'age'</span>, <span class="number">30</span>], [<span class="string">'addr'</span>, <span class="string">'深圳'</span>], [<span class="string">'sex'</span>]]);</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key, value] <span class="keyword">of</span> map) &#123;</div><div class="line">  <span class="built_in">console</span>.log(key, value);  <span class="comment">// name 张三  age 30  addr 深圳  sex undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Map的forEach方法和数组的类似，可以对每个成员执行某种操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'a'</span>, <span class="number">100</span>], [<span class="string">'b'</span>, <span class="number">200</span>]]);</div><div class="line">map.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(key, value*<span class="number">2</span>);  <span class="comment">// a 200  b 400</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>参考链接<br><a href="http://es6.ruanyifeng.com/#docs/set-map" target="_blank" rel="external">ECMAScript 6 入门（阮一峰）：Set和Map数据结构</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/weixinpay.png" alt="gwyi WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/18/ES6学习笔记（二）：变量的解构赋值/" rel="next" title="ES6学习笔记（二）：变量的解构赋值">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记（二）：变量的解构赋值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/19/ES6学习笔记（四）：for-of循环/" rel="prev" title="ES6学习笔记（四）：for...of循环">
+                ES6学习笔记（四）：for...of循环 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="gwyi" />
+          <p class="site-author-name" itemprop="name">gwyi</p>
+           
+              <p class="site-description motion-element" itemprop="description">前端开发工程师一枚，希望能记录一些自己在工作中遇到的问题，和大家共同学习、交流</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gongwenyi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3806801983/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Set的初始化"><span class="nav-number">1.</span> <span class="nav-text">一、Set的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Set实例的属性和方法"><span class="nav-number">2.</span> <span class="nav-text">二、Set实例的属性和方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Map的初始化"><span class="nav-number">3.</span> <span class="nav-text">三、Map的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Map实例的属性和方法"><span class="nav-number">4.</span> <span class="nav-text">四、Map实例的属性和方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">gwyi</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://gwyi-blog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/02/19/ES6学习笔记（三）：Set和Map数据结构/';
+          this.page.identifier = '2017/02/19/ES6学习笔记（三）：Set和Map数据结构/';
+          this.page.title = 'ES6学习笔记（三）：Set和Map数据结构';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gwyi-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
