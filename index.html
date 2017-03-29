@@ -294,6 +294,175 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/js判断数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="gwyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="gwyi &nbsp; blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/29/js判断数据类型/" itemprop="url">
+                  js判断数据类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T11:28:11+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/29/js判断数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/03/29/js判断数据类型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="js中的数据类型"><a href="#js中的数据类型" class="headerlink" title="js中的数据类型"></a>js中的数据类型</h1><p>js中的数据类型大致可以分为以下几种：</p>
+<ol>
+<li>基本类型：number、  string、  boolean</li>
+<li>特殊类型：undefined、 null</li>
+<li>引用类型：Object、 Function、 Date、 Array 等等</li>
+</ol>
+<p>下面介绍js中提供的三种判断数据类型的方法</p>
+<h1 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h1><p>typeof 返回一个表示数据类型的字符串，返回值有 number、 string、 boolean、 undefined、 object、 function 这6种<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="number">123</span>; <span class="comment">// number</span></div><div class="line"><span class="keyword">typeof</span> <span class="string">''</span>;  <span class="comment">// string</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span>;  <span class="comment">// boolean</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>; <span class="comment">// undefined</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span>;  <span class="comment">// object 不能正确判断出null类型</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>();  <span class="comment">// function</span></div><div class="line"><span class="keyword">typeof</span> &#123;&#125;;  <span class="comment">// object</span></div><div class="line"><span class="keyword">typeof</span> [];  <span class="comment">// object 不能正确判断出数组类型</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>();  <span class="comment">// object 不能正确判断出日期类型</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>();  <span class="comment">// object 不能正确判断出正则类型</span></div></pre></td></tr></table></figure></p>
+<p>从上面的结果中可以看出 typeof 可以正确判断出基本类型，但是对于 null、Date、Array 等都是返回 object，不能得到具体的类型，使用的时候需要特别注意</p>
+<h1 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h1><p><strong>instanceof检测的是原型</strong>，可以判断 a 是否为 b 的实例， 使用方式为：<code>a instanceof b</code>，其内部执行过程如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">instanceof</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> a.__proto__ === b.prototype;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果 a 的 __proto__ 指向 b 的 prototype 时，就认为 a 是 b 的实例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>;  <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() <span class="keyword">instanceof</span> <span class="built_in">Date</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>() <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>; <span class="comment">// true</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">new</span> Car() <span class="keyword">instanceof</span> Car; <span class="comment">// true</span></div><div class="line"></div><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>() <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> Car() <span class="keyword">instanceof</span> <span class="built_in">Object</span>;  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>从上面的代码可以看出，instanceof 能够判断出 [] 是 Array 的实例，但也认为 [] 是 Object 的实例，这是为什么呢？<br>看下面的代码就明白了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].__proto__ === <span class="built_in">Array</span>.prototype; <span class="comment">// true</span></div><div class="line"><span class="built_in">Array</span>.prototype.__proto__ === <span class="built_in">Object</span>.prototype; <span class="comment">// true</span></div><div class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span>;  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>从 [] -&gt; Array -&gt; Object -&gt; null 这四者构成了一条<strong>原型链</strong>，[] 的 __proto__ 直接指向 Array.prototype，间接指向 Object.prototype，所以 [] 也是 Object 的实例，类似new Date()、new Car() 也会形成一条这样的原型链，因此，<strong>instanceof 只能用来判断两个对象是否属于原型链的关系，而不能获得对象的具体类型</strong></p>
+<h1 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h1><p>可以通过 toString() 来获取每个对象的类型。为了每个对象都能通过 Object.prototype.toString() 来检测（这是因为大部分对象都实现了自身的 toString 方法，如果通过 [1, 2].toString() 这种方式来调用的话，是无法获取到具体类型的），需要以 Function.prototype.call() 或者 Function.prototype.apply() 的形式来调用，把需要检测的对象作为第一个参数传入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">123</span>);  <span class="comment">// [object Number]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">'abc'</span>);  <span class="comment">// [object String]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>);  <span class="comment">// [object Boolean]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>);  <span class="comment">// [object Undefined]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>);  <span class="comment">// [object Null]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(&#123;&#125;);  <span class="comment">// [object Object]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call([]);  <span class="comment">// [object Array]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);  <span class="comment">// [object Function]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>());  <span class="comment">// [object Date]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">RegExp</span>());  <span class="comment">// [object RegExp]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Error</span>());  <span class="comment">// [object Error]</span></div></pre></td></tr></table></figure></p>
+<p>通过上面的代码可以看出 Object.prototype.toString 基本能够准确的获取到所有对象的具体类型，事实上 jQuery 中的 type() 方法也是通过这种方式来实现的</p>
+<h1 id="jQuery-中-type-方法实现源码"><a href="#jQuery-中-type-方法实现源码" class="headerlink" title="jQuery 中 type() 方法实现源码"></a>jQuery 中 type() 方法实现源码</h1><p>jQuery 中 type 方法实现源码，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 用于预存储一张类型表用于 hook</span></div><div class="line"><span class="keyword">var</span> class2type = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 原生的 typeof 方法并不能区分出一个变量它是 Array 、RegExp 等 object 类型，jQuery 为了扩展 typeof 的表达力，因此有了 $.type 方法</span></div><div class="line"><span class="comment">// 针对一些特殊的对象（例如 null，Array，RegExp）也进行精准的类型判断</span></div><div class="line"><span class="comment">// 运用了钩子机制，判断类型前，将常见类型打表，先存于一个 Hash 表 class2type 里边</span></div><div class="line"><span class="string">"Boolean Number String Function Array Date RegExp Object Error"</span>.split(<span class="string">" "</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">name, i</span>) </span>&#123;</div><div class="line">  class2type[<span class="string">"[object "</span> + name + <span class="string">"]"</span>] = name.toLowerCase();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 确定JavaScript 对象的类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (obj == <span class="literal">null</span>) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">String</span>(obj);</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 利用事先存好的 hash 表 class2type 作精准判断</span></div><div class="line">  <span class="comment">// 这里因为 hook 的存在，省去了大量的 else if 判断</span></div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> obj === <span class="string">"object"</span> || <span class="keyword">typeof</span> obj === <span class="string">"function"</span> ?</div><div class="line">    class2type[<span class="built_in">Object</span>.prototype.toString.call(obj)] || <span class="string">"object"</span> :</div><div class="line">    <span class="keyword">typeof</span> obj;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">type(<span class="number">123</span>);  <span class="comment">// number</span></div><div class="line">type(<span class="string">'abc'</span>);  <span class="comment">// string</span></div><div class="line">type(<span class="literal">true</span>); <span class="comment">// boolean</span></div><div class="line">type(<span class="literal">undefined</span>);  <span class="comment">// undefined</span></div><div class="line">type(<span class="literal">null</span>); <span class="comment">// null</span></div><div class="line">type([]); <span class="comment">// array</span></div><div class="line">type(&#123;&#125;); <span class="comment">// object</span></div><div class="line">type(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;); <span class="comment">// function</span></div><div class="line">type(<span class="keyword">new</span> <span class="built_in">Date</span>()); <span class="comment">// date</span></div><div class="line">type(<span class="keyword">new</span> <span class="built_in">RegExp</span>()); <span class="comment">// regexp</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/08/macOS安装及启动mongodb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -343,6 +512,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -483,6 +674,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -620,6 +833,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -761,6 +996,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -804,146 +1061,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/02/18/ES6学习笔记（二）：变量的解构赋值/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/18/ES6学习笔记（一）：let和const命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="gwyi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="gwyi &nbsp; blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/18/ES6学习笔记（一）：let和const命令/" itemprop="url">
-                  ES6学习笔记（一）：let和const命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-18T13:31:21+08:00">
-                2017-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/18/ES6学习笔记（一）：let和const命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/02/18/ES6学习笔记（一）：let和const命令/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>ES6新增了<code>let</code>和<code>const</code>两个命令来声明变量，这两个新的命令和ES5中的<code>var</code>命令有很多不同之处，而且使用<code>let</code>和<code>const</code>会让代码看起来更严谨。</p>
-</blockquote>
-<h1 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h1><p>在ES5的时候，只有全局作用域和函数作用域，ES6新增了块级作用域的概念，看下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">  <span class="keyword">let</span> b = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// ReferenceError: b is not defined</span></div></pre></td></tr></table></figure></p>
-<p>在上面的代码块之中，分别用<code>var</code>和<code>let</code>声明了变量<code>a</code>和<code>b</code>，然后我们在代码块之外访问变量<code>a</code>和<code>b</code>,结果用<code>var</code>声明的变量<code>a</code>能够访问到，而用<code>let</code>声明的变量<code>b</code>报错了。这表明，用<code>let</code>声明的变量只在它所在的代码块内有效。<code>for</code>循环中的计数器就非常适合用<code>let</code>来声明，用<code>let</code>声明的计数器<code>i</code>的作用域仅仅在循环体中，外部是没法访问到的，而用<code>var</code>声明的计数器<code>j</code>的作用域却是全局的，在任何地方都能访问，而这并不是我们想要的结果。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/18/ES6学习笔记（一）：let和const命令/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1029,12 +1146,21 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
           
 
           
