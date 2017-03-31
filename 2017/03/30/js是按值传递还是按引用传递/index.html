@@ -87,34 +87,35 @@
 
 
 
-<meta name="description" content="js中的数据类型js中的数据类型大致可以分为以下几种：
+<meta name="description" content="变量在内存中的存储方式要弄清楚这个问题，首先要知道变量在内存中的存储方式，js中的数据类型分为两类：
 
-基本类型：number、  string、  boolean
-特殊类型：undefined、 null
-引用类型：Object、 Function、 Date、 Array 等等
+基本类型：包括 Number、String、Boolean、Undefined、Null
+引用类型：包括 Object、Array、Date、Function 等
 
-下面介绍js中提供的三种判断数据类型的方法">
+对于这两种数据类型，有不同的内存分配，我们声明如下两个变量12var a = 100;var b = &amp;#123; age: 30">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js判断数据类型">
-<meta property="og:url" content="http://yoursite.com/2017/03/29/js判断数据类型/index.html">
+<meta property="og:title" content="js是按值传递还是按引用传递">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/js是按值传递还是按引用传递/index.html">
 <meta property="og:site_name" content="gwyi  blog">
-<meta property="og:description" content="js中的数据类型js中的数据类型大致可以分为以下几种：
+<meta property="og:description" content="变量在内存中的存储方式要弄清楚这个问题，首先要知道变量在内存中的存储方式，js中的数据类型分为两类：
 
-基本类型：number、  string、  boolean
-特殊类型：undefined、 null
-引用类型：Object、 Function、 Date、 Array 等等
+基本类型：包括 Number、String、Boolean、Undefined、Null
+引用类型：包括 Object、Array、Date、Function 等
 
-下面介绍js中提供的三种判断数据类型的方法">
-<meta property="og:updated_time" content="2017-03-29T08:00:08.000Z">
+对于这两种数据类型，有不同的内存分配，我们声明如下两个变量12var a = 100;var b = &amp;#123; age: 30">
+<meta property="og:image" content="http://yoursite.com/images/js-call-by-type01.png">
+<meta property="og:image" content="http://yoursite.com/images/js-call-by-type02.png">
+<meta property="og:image" content="http://yoursite.com/images/js-call-by-type03.png">
+<meta property="og:updated_time" content="2017-03-31T09:22:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js判断数据类型">
-<meta name="twitter:description" content="js中的数据类型js中的数据类型大致可以分为以下几种：
+<meta name="twitter:title" content="js是按值传递还是按引用传递">
+<meta name="twitter:description" content="变量在内存中的存储方式要弄清楚这个问题，首先要知道变量在内存中的存储方式，js中的数据类型分为两类：
 
-基本类型：number、  string、  boolean
-特殊类型：undefined、 null
-引用类型：Object、 Function、 Date、 Array 等等
+基本类型：包括 Number、String、Boolean、Undefined、Null
+引用类型：包括 Object、Array、Date、Function 等
 
-下面介绍js中提供的三种判断数据类型的方法">
+对于这两种数据类型，有不同的内存分配，我们声明如下两个变量12var a = 100;var b = &amp;#123; age: 30">
+<meta name="twitter:image" content="http://yoursite.com/images/js-call-by-type01.png">
 
 
 
@@ -142,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/29/js判断数据类型/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/30/js是按值传递还是按引用传递/"/>
 
 
 
 
 
-  <title> js判断数据类型 | gwyi  blog </title>
+  <title> js是按值传递还是按引用传递 | gwyi  blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -311,7 +312,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/js判断数据类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/js是按值传递还是按引用传递/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="gwyi">
@@ -332,7 +333,7 @@
             
             
               
-                js判断数据类型
+                js是按值传递还是按引用传递
               
             
           </h1>
@@ -347,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T11:28:11+08:00">
-                2017-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T12:21:53+08:00">
+                2017-03-30
               </time>
             
 
@@ -388,9 +389,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/29/js判断数据类型/#comments" itemprop="discussionUrl">
+                <a href="/2017/03/30/js是按值传递还是按引用传递/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/03/29/js判断数据类型/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/03/30/js是按值传递还是按引用传递/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -421,25 +422,43 @@
       
 
       
-        <h1 id="js中的数据类型"><a href="#js中的数据类型" class="headerlink" title="js中的数据类型"></a>js中的数据类型</h1><p>js中的数据类型大致可以分为以下几种：</p>
+        <h1 id="变量在内存中的存储方式"><a href="#变量在内存中的存储方式" class="headerlink" title="变量在内存中的存储方式"></a>变量在内存中的存储方式</h1><p>要弄清楚这个问题，首先要知道变量在内存中的存储方式，js中的数据类型分为两类：</p>
 <ol>
-<li>基本类型：number、  string、  boolean</li>
-<li>特殊类型：undefined、 null</li>
-<li>引用类型：Object、 Function、 Date、 Array 等等</li>
+<li>基本类型：包括 Number、String、Boolean、Undefined、Null</li>
+<li>引用类型：包括 Object、Array、Date、Function 等</li>
 </ol>
-<p>下面介绍js中提供的三种判断数据类型的方法</p>
+<p>对于这两种数据类型，有不同的内存分配，我们声明如下两个变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line"><span class="keyword">var</span> b = &#123; <span class="attr">age</span>: <span class="number">30</span> &#125;;</div></pre></td></tr></table></figure></p>
+<p>通过下面这张图就可以看清楚变量 a 和 b 在内存中的存储方式<br><img src="/images/js-call-by-type01.png" alt="内存分配方式"></p>
 <a id="more"></a>
-<h1 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h1><p>typeof 返回一个表示数据类型的字符串，返回值有 number、 string、 boolean、 undefined、 object、 function 这6种<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="number">123</span>; <span class="comment">// number</span></div><div class="line"><span class="keyword">typeof</span> <span class="string">''</span>;  <span class="comment">// string</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span>;  <span class="comment">// boolean</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>; <span class="comment">// undefined</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span>;  <span class="comment">// object 不能正确判断出null类型</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>();  <span class="comment">// function</span></div><div class="line"><span class="keyword">typeof</span> &#123;&#125;;  <span class="comment">// object</span></div><div class="line"><span class="keyword">typeof</span> [];  <span class="comment">// object 不能正确判断出数组类型</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>();  <span class="comment">// object 不能正确判断出日期类型</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>();  <span class="comment">// object 不能正确判断出正则类型</span></div></pre></td></tr></table></figure></p>
-<p>从上面的结果中可以看出 typeof 可以正确判断出基本类型，但是对于 null、Date、Array 等都是返回 object，不能得到具体的类型，使用的时候需要特别注意</p>
-<h1 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h1><p><strong>instanceof检测的是原型</strong>，可以判断 a 是否为 b 的实例， 使用方式为：<code>a instanceof b</code>，其内部执行过程如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">instanceof</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> a.__proto__ === b.prototype;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>如果 a 的 __proto__ 指向 b 的 prototype 时，就认为 a 是 b 的实例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>;  <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() <span class="keyword">instanceof</span> <span class="built_in">Date</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>() <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>; <span class="comment">// true</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">new</span> Car() <span class="keyword">instanceof</span> Car; <span class="comment">// true</span></div><div class="line"></div><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>() <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">new</span> Car() <span class="keyword">instanceof</span> <span class="built_in">Object</span>;  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<p>从上面的代码可以看出，instanceof 能够判断出 [] 是 Array 的实例，但也认为 [] 是 Object 的实例，这是为什么呢？<br>看下面的代码就明白了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].__proto__ === <span class="built_in">Array</span>.prototype; <span class="comment">// true</span></div><div class="line"><span class="built_in">Array</span>.prototype.__proto__ === <span class="built_in">Object</span>.prototype; <span class="comment">// true</span></div><div class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span>;  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<p>从 [] -&gt; Array -&gt; Object -&gt; null 这四者构成了一条<strong>原型链</strong>，[] 的 __proto__ 直接指向 Array.prototype，间接指向 Object.prototype，所以 [] 也是 Object 的实例，类似new Date()、new Car() 也会形成一条这样的原型链，因此，<strong>instanceof 只能用来判断两个对象是否属于原型链的关系，而不能获得对象的具体类型</strong></p>
-<h1 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h1><p>可以通过 toString() 来获取每个对象的类型。为了每个对象都能通过 Object.prototype.toString() 来检测（这是因为大部分对象都实现了自身的 toString 方法，如果通过 [1, 2].toString() 这种方式来调用的话，是无法获取到具体类型的），需要以 Function.prototype.call() 或者 Function.prototype.apply() 的形式来调用，把需要检测的对象作为第一个参数传入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">123</span>);  <span class="comment">// [object Number]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">'abc'</span>);  <span class="comment">// [object String]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>);  <span class="comment">// [object Boolean]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>);  <span class="comment">// [object Undefined]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>);  <span class="comment">// [object Null]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(&#123;&#125;);  <span class="comment">// [object Object]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call([]);  <span class="comment">// [object Array]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);  <span class="comment">// [object Function]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>());  <span class="comment">// [object Date]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">RegExp</span>());  <span class="comment">// [object RegExp]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Error</span>());  <span class="comment">// [object Error]</span></div></pre></td></tr></table></figure></p>
-<p>通过上面的代码可以看出 Object.prototype.toString 基本能够准确的获取到所有对象的具体类型，事实上 jQuery 中的 type() 方法也是通过这种方式来实现的</p>
-<h1 id="jQuery-中-type-方法实现源码"><a href="#jQuery-中-type-方法实现源码" class="headerlink" title="jQuery 中 type() 方法实现源码"></a>jQuery 中 type() 方法实现源码</h1><p>jQuery 中 type 方法实现源码，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 用于预存储一张类型表用于 hook</span></div><div class="line"><span class="keyword">var</span> class2type = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 原生的 typeof 方法并不能区分出一个变量它是 Array 、RegExp 等 object 类型，jQuery 为了扩展 typeof 的表达力，因此有了 $.type 方法</span></div><div class="line"><span class="comment">// 针对一些特殊的对象（例如 null，Array，RegExp）也进行精准的类型判断</span></div><div class="line"><span class="comment">// 运用了钩子机制，判断类型前，将常见类型打表，先存于一个 Hash 表 class2type 里边</span></div><div class="line"><span class="string">"Boolean Number String Function Array Date RegExp Object Error"</span>.split(<span class="string">" "</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">name, i</span>) </span>&#123;</div><div class="line">  class2type[<span class="string">"[object "</span> + name + <span class="string">"]"</span>] = name.toLowerCase();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 确定JavaScript 对象的类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (obj == <span class="literal">null</span>) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">String</span>(obj);</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 利用事先存好的 hash 表 class2type 作精准判断</span></div><div class="line">  <span class="comment">// 这里因为 hook 的存在，省去了大量的 else if 判断</span></div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> obj === <span class="string">"object"</span> || <span class="keyword">typeof</span> obj === <span class="string">"function"</span> ?</div><div class="line">    class2type[<span class="built_in">Object</span>.prototype.toString.call(obj)] || <span class="string">"object"</span> :</div><div class="line">    <span class="keyword">typeof</span> obj;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// example</span></div><div class="line">type(<span class="number">123</span>);  <span class="comment">// number</span></div><div class="line">type(<span class="string">'abc'</span>);  <span class="comment">// string</span></div><div class="line">type(<span class="literal">true</span>); <span class="comment">// boolean</span></div><div class="line">type(<span class="literal">undefined</span>);  <span class="comment">// undefined</span></div><div class="line">type(<span class="literal">null</span>); <span class="comment">// null</span></div><div class="line">type([]); <span class="comment">// array</span></div><div class="line">type(&#123;&#125;); <span class="comment">// object</span></div><div class="line">type(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;); <span class="comment">// function</span></div><div class="line">type(<span class="keyword">new</span> <span class="built_in">Date</span>()); <span class="comment">// date</span></div><div class="line">type(<span class="keyword">new</span> <span class="built_in">RegExp</span>()); <span class="comment">// regexp</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>基本类型：存储在栈（stack）中的简单数据段，他们的值直接存储在变量访问的位置。<br>这是因为基本类型占据的空间是固定的，可以存储在较小的内存区域栈中，以便于快速查找变量的值</li>
+<li>引用类型：存储在堆（heap）中的对象，这个时候，存储在变量处值其实是一个指针（point），指向该对象在内存中的地址。这是因为引用值是可变的（可以动态增加新的属性），所以不能存储在栈中，否则会降低变量的查找速度。</li>
+</ul>
+<h1 id="复制变量时的不同"><a href="#复制变量时的不同" class="headerlink" title="复制变量时的不同"></a>复制变量时的不同</h1><p>现在我们增加两个变量 c 和 d<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line"><span class="keyword">var</span> b = &#123; <span class="attr">age</span>: <span class="number">30</span> &#125;;</div><div class="line"><span class="keyword">var</span> c = a;</div><div class="line"><span class="keyword">var</span> d = b;</div></pre></td></tr></table></figure></p>
+<p>这个时候变量 c、d 在内存中的存储方式变成了这样<br><img src="/images/js-call-by-type02.png" alt="内存分配方式"></p>
+<p>此时我们改变 c、d 的值，看一下 a、b 是否也会被改变<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">c = <span class="number">200</span>;</div><div class="line">d.sex = <span class="string">'男'</span>;</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 200</span></div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 100</span></div><div class="line"><span class="built_in">console</span>.log(d); <span class="comment">// &#123; age: 30, sex: '男' &#125;</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// &#123; age: 30, sex: '男' &#125;</span></div></pre></td></tr></table></figure></p>
+<p>上面代码中我们是给 d 新增了一个 sex 属性，如果是重新给 d 赋值，结果又会怎么样呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">d = &#123; <span class="attr">name</span>: <span class="string">'gwyi'</span> &#125;;</div><div class="line"><span class="built_in">console</span>.log(d); <span class="comment">// &#123; name: 'gwyi' &#125;</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// &#123; age: 30, sex: '男' &#125;</span></div></pre></td></tr></table></figure></p>
+<p>为什么会出现这样的结果呢？给 d 重新赋值之后，并没有改变 b 的值，这是因为给 d 重新赋值之后，d 就指向了堆内存中的 { name: ‘gwyi’ }，而不再指向 { age: 30 }<br><img src="/images/js-call-by-type03.png" alt="内存分配方式"></p>
+<ul>
+<li>基本类型：在将一个保存着原始值的变量复制给另一个变量时，会将原始值的副本赋值给新变量，这两个变量是相互独立的，更改其中一个的值不会影响到另一个</li>
+<li>引用类型：在将一个保存着对象内存地址的变量赋值给另一个变量时，会把这个<strong>内存地址</strong>赋值给新的变量（并不会在堆内存中新生成一个一模一样的对象），此时这两个变量都指向了堆内存中的同一个对象，对其中任何一个<strong>属性值</strong>的修改都会同步反映在另一个身上</li>
+</ul>
+<h1 id="什么是按值传递？按引用传递？"><a href="#什么是按值传递？按引用传递？" class="headerlink" title="什么是按值传递？按引用传递？"></a>什么是按值传递？按引用传递？</h1><p>看下面的 c++ 中的例子来解释什么是值传递和引用传递<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//值传递</div><div class="line">void change1(int n)&#123;</div><div class="line">  n++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//引用传递</div><div class="line">void change2(int &amp; n)&#123;</div><div class="line">    n++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">  int a = 10;</div><div class="line">  change1(a);</div><div class="line">  cout&lt;&lt;'a='&lt;&lt;a&lt;&lt;endl;  // a=10</div><div class="line">  change2(a);</div><div class="line">  cout&lt;&lt;'a='&lt;&lt;a&lt;&lt;endl;  // a=11</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>值传递：形参是实参的拷贝，改变形参的值并不会影响外部实参的值。<code>change1</code>使用的是值传递，当修改形参 n 的值时，实参 a 的值并没有被改变</li>
+<li>引用传递：形参相当于是实参的“别名”，对形参的操作其实就是对实参的操作，在引用传递过程中，被调函数的形式参数虽然也作为局部变量在栈中开辟了内存空间，但是这时存放的是由主调函数放进来的实参变量的地址。被调函数对形参的任何操作都被处理成间接寻址，即通过栈中存放的地址访问主调函数中的实参变量。正因为如此，被调函数对形参做的任何操作都影响了主调函数中的实参变量。<code>change2</code>使用的是引用传递，当修改形参 n 的值时，实参 a 的值也会被改变</li>
+</ul>
+<h1 id="js中参数的传递方式"><a href="#js中参数的传递方式" class="headerlink" title="js中参数的传递方式"></a>js中参数的传递方式</h1><p>js中的基本类型是按值传递的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">  n++;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">change(a);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10 不受 n++ 的影响</span></div></pre></td></tr></table></figure></p>
+<p>再来看引用类型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj.name = <span class="string">'gwyi'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = &#123; <span class="attr">age</span>: <span class="number">30</span> &#125;;</div><div class="line">change(a);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123; age: 30, name: 'gwyi' &#125; a 的值被修改了</span></div></pre></td></tr></table></figure></p>
+<p>a 的值被修改了，说明不是按值传递，那就是按引用传递吗？再来看这个例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj = &#123; <span class="attr">name</span>: <span class="string">'gwyi'</span> &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = &#123; <span class="attr">age</span>: <span class="number">30</span> &#125;;</div><div class="line">change(a);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123; age: 30 &#125; a 的值没有被修改</span></div></pre></td></tr></table></figure></p>
+<p>如果是按引用传递，当修改形参 obj 的值时，a 的值应该也会被修改，但实际情况是 a 的值并没有被修改，说明并不是按引用传递，那js中引用类型的值究竟是按什么方式传递的呢？</p>
+<h1 id="按共享传递"><a href="#按共享传递" class="headerlink" title="按共享传递"></a>按共享传递</h1><p>准确的说，js中的基本类型是按值传递，引用类型是按<strong>共享传递</strong>（call by sharing），最早由 Barbara Liskov 提出，该求值策略被用于 Python、Java、Ruby、JavaScript 等多种语音</p>
+<p>该策略的重点是：调用函数传参时，函数接受对象实参引用的副本(既不是按值传递的对象副本，也不是按引用传递的隐式引用)。 它和按引用传递的不同在于：在共享传递中对形参的<strong>重新赋值</strong>，不会影响实参的值。这就是上面这个例子中 a 的值没有被修改的原因<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj = &#123; <span class="attr">name</span>: <span class="string">'gwyi'</span> &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = &#123; <span class="attr">age</span>: <span class="number">30</span> &#125;;</div><div class="line">change(a);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123; age: 30 &#125; a 的值没有被修改</span></div></pre></td></tr></table></figure></p>
+<p>其实这就和上面“复制变量时的不同”（上面图三所示）写到的一样，开始的时候 a 和 obj 都指向堆内存中的 { age: 30 }，当为 obj 重新赋值时，obj 就不在指向 { age: 30 } 这个对象，而是指向 { name: ‘gwyi’ } 这个新的对象</p>
+<p>而对于下面这种 a 的值被修改了的情况，就和上面图二所示的一样， a 和 obj 都指向堆内存中的 { age: 30 }，此时 obj 新增的属性值也会同步影响 a 的值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj.name = <span class="string">'gwyi'</span>;</div><div class="line">  <span class="built_in">console</span>.log(obj); <span class="comment">// &#123; age: 30, name: 'gwyi' &#125;</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = &#123; <span class="attr">age</span>: <span class="number">30</span> &#125;;</div><div class="line">change(a);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123; age: 30, name: 'gwyi' &#125; a 的值被修改了</span></div></pre></td></tr></table></figure></p>
+<p>以上内容也是自己在看了其他同学的解答之后整理出来的，并非自己原创！</p>
 <blockquote>
-<p>参考链接<br><a href="http://www.cnblogs.com/onepixel/p/5126046.html" target="_blank" rel="external">JS 判断数据类型的三种方法</a><br><a href="http://www.jianshu.com/p/a62d48152fb8" target="_blank" rel="external">javascript判断数据类型</a></p>
+<p>参考链接<br><a href="https://www.zhihu.com/question/27114726" target="_blank" rel="external">知乎：“苏墨橘”回答javascript传递参数如果是object的话，是按值传递还是按引用传递？</a><br><a href="http://bosn.me/js/js-call-by-sharing/" target="_blank" rel="external">JS是按值传递还是按引用传递?</a></p>
 </blockquote>
 
       
@@ -499,8 +518,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/08/macOS安装及启动mongodb/" rel="next" title="macOS安装及启动mongodb">
-                <i class="fa fa-chevron-left"></i> macOS安装及启动mongodb
+              <a href="/2017/03/29/js判断数据类型/" rel="next" title="js判断数据类型">
+                <i class="fa fa-chevron-left"></i> js判断数据类型
               </a>
             
           </div>
@@ -508,10 +527,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/30/js是按值传递还是按引用传递/" rel="prev" title="js是按值传递还是按引用传递">
-                js是按值传递还是按引用传递 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -667,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js中的数据类型"><span class="nav-number">1.</span> <span class="nav-text">js中的数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typeof"><span class="nav-number">2.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#instanceof"><span class="nav-number">3.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">4.</span> <span class="nav-text">Object.prototype.toString</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery-中-type-方法实现源码"><span class="nav-number">5.</span> <span class="nav-text">jQuery 中 type() 方法实现源码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量在内存中的存储方式"><span class="nav-number">1.</span> <span class="nav-text">变量在内存中的存储方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制变量时的不同"><span class="nav-number">2.</span> <span class="nav-text">复制变量时的不同</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是按值传递？按引用传递？"><span class="nav-number">3.</span> <span class="nav-text">什么是按值传递？按引用传递？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js中参数的传递方式"><span class="nav-number">4.</span> <span class="nav-text">js中参数的传递方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按共享传递"><span class="nav-number">5.</span> <span class="nav-text">按共享传递</span></a></li></ol></div>
             
 
           </div>
@@ -831,9 +846,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/03/29/js判断数据类型/';
-          this.page.identifier = '2017/03/29/js判断数据类型/';
-          this.page.title = 'js判断数据类型';
+          this.page.url = 'http://yoursite.com/2017/03/30/js是按值传递还是按引用传递/';
+          this.page.identifier = '2017/03/30/js是按值传递还是按引用传递/';
+          this.page.title = 'js是按值传递还是按引用传递';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://gwyi-blog.disqus.com/embed.js';
